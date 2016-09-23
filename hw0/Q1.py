@@ -7,13 +7,13 @@ nums = []
 
 for line in file:
     cols = line.split()
-    num = cols[col]
+    num = float(cols[col])
     nums.append(num)
 
 file.close()
 
 nums.sort()
-result = ",".join(nums)
+result = ",".join(map(lambda x:"{:.3f}".format(x),nums))
 
 ans = open("ans1.txt","w")
 ans.write(result)
